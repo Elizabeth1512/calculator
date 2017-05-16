@@ -12,23 +12,23 @@ def calc(key):
     global memory
     if key == "=":
 
-#4tob nelzja bqlo vvezti bulkvq(isklju4aem napisanie bukv)
+#encluding writing letters
            strl = "-+0123456789.*/"
            if calc_entry.get()[0] not in strl:
                calc_entry.insert(END, "Pervqj simvol ne chislo")
                 messagebox.showerror("Error!", "Vq vvlei ne 4islo!")
 
-#s4et
+#score
            try:
 		result = eval(calc_entry.get())
 		calc_entry.insert (END, "=" + str(result))
 	   except:
-		calc_entry.insert (END, "Error!")
+	        calc_entry.insert (END, "Error!")
 		messagebox.showerror("Error!", "Preverj pravilnostj dannqh")
-#o4istitj pole
+#clear field
       elif key == "C":
 	   calc_entry.delete(0, END)
-#smena +-
+#changing +-
       elif key == "-+":
 	   if "=" in  calc_entry.get():
 	         calc_entry.delete(0, END)
@@ -46,13 +46,13 @@ def calc(key):
 
 
 
-#screate a key
+#create a key
 bttn_list = [
 
     "7", "8", "9", "+", "-"
     "4", "5", "6", "*", "/"
     "1", "2", "3", "-/+", "="
-    "0", ".", "?", "", ""
+    "0", ".", "c", "", ""
 ]
 r = 1
 c = 0
