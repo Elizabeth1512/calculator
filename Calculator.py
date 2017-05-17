@@ -4,7 +4,6 @@ from tkinter import messagebox
 from tkinter import ttk
 
 #create a window
-#test
 root = Tk()
 root.title("Calculator")
 
@@ -12,47 +11,44 @@ root.title("Calculator")
 def calc(key):
     global memory
     if key == "=":
-
-#encluding writing letters
-           strl = "-+0123456789.*/"
-           if calc_entry.get()[0] not in strl:
-               calc_entry.insert(END, "Pervqj simvol ne chislo")
-                messagebox.showerror("Error!", "Vq vvlei ne 4islo!")
-
-#score
-           try:
-		result = eval(calc_entry.get())
-		calc_entry.insert (END, "=" + str(result))
-	   except:
-	        calc_entry.insert (END, "Error!")
-		messagebox.showerror("Error!", "Preverj pravilnostj dannqh")
-#clear field
-      elif key == "C":
-	   calc_entry.delete(0, END)
-#changing +-
-      elif key == "-+":
-	   if "=" in  calc_entry.get():
-	         calc_entry.delete(0, END)
-           try:
-		if calc_entry.get()[0] == "-":
-		       calc_entry.delete(0)
-		else:
-			calc_entry.insert(0, "-")
-	    except IndexError:
-		pass
-       else:
-	   if "=" in calc_entry.get():
-		calc_entry.delete(0, END)
-	   calc_entry.insert(END, key)     
+        #encluding writing letters
+        strl = "-+0123456789.*/"
+        if calc_entry.get()[0] not in strl:
+            calc_entry.insert(END, "Pervqj simvol ne chislo")
+            messagebox.showerror("Error!", "Vq vvlei ne 4islo!")
+            #score
+            try:
+                result = eval(calc_entry.get())
+                calc_entry.insert (END, "=" + str(result))
+            except:
+                calc_entry.insert (END, "Error!")
+                messagebox.showerror("Error!", "Preverj pravilnostj dannqh")
+            #clear field
+        elif key == "C":
+            calc_entry.delete(0, END)
+            #changing +-
+        elif key == "-+":
+            if "=" in  calc_entry.get():
+                calc_entry.delete(0, END)
+                try:
+                    if calc_entry.get()[0] == "-":
+                        calc_entry.delete(0)
+                    else:
+                        calc_entry.insert(0, "-")
+                except IndexError:
+                    pass
+                else:
+                    if "=" in calc_entry.get():
+                        calc_entry.delete(0, END)
+                        calc_entry.insert(END, key)
 
 
 
 #create a key
 bttn_list = [
-
-    "7", "8", "9", "+", "-"
-    "4", "5", "6", "*", "/"
-    "1", "2", "3", "-/+", "="
+    "7", "8", "9", "+", "-",
+    "4", "5", "6", "*", "/",
+    "1", "2", "3", "-/+", "=",
     "0", ".", "c", "", ""
 ]
 r = 1
@@ -61,7 +57,7 @@ c = 0
 
 for i in bttn_list:
     rel = ""
-   cmd =lambda x=i: calc(x)
+    cmd =lambda x=i: calc(x)
     ttk.Button(root, text=i, command=cmd).grid(row=r, column=c)
     c += 1
     if c>4:
