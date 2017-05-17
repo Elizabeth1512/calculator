@@ -14,15 +14,15 @@ def calc(key):
         #encluding writing letters
         strl = "-+0123456789.*/"
         if calc_entry.get()[0] not in strl:
-            calc_entry.insert(END, "Pervqj simvol ne chislo")
-            messagebox.showerror("Error!", "Vq vvlei ne 4islo!")
+            calc_entry.insert(END, "The first symbol was not a number")
+            messagebox.showerror("Error!", "You did not enter a number!")
             #score
             try:
                 result = eval(calc_entry.get())
                 calc_entry.insert (END, "=" + str(result))
             except:
                 calc_entry.insert (END, "Error!")
-                messagebox.showerror("Error!", "Preverj pravilnostj dannqh")
+                messagebox.showerror("Error!", "Control your data")
             #clear field
         elif key == "C":
             calc_entry.delete(0, END)
