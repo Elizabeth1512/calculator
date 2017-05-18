@@ -12,8 +12,8 @@ def calc(key):
     global memory
     if key == "=":
         #encluding writing letters
-        strl = "-+0123456789.*/"
-        if calc_entry.get()[0] not in strl:
+        str1 = "-+0123456789.*/"
+        if calc_entry.get()[0] not in str1:
             calc_entry.insert(END, "The first symbol was not a number")
             messagebox.showerror("Error!", "You did not enter a number!")
             #score
