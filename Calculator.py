@@ -17,6 +17,12 @@ if calc_entry.get()[0] not in str1:
         calc_entry.insert(END, "The first symbol was not a number")
         messagebox.showerror("Error!", "You did not enter a number!")
         # score
+elif key == "C":
+        calc_entry.delete(0, END)
+    # changing +-
+
+elif key == "-+":
+
 else:
 
     try:
@@ -26,11 +32,8 @@ else:
             calc_entry.insert(END, "Error!")
             messagebox.showerror("Error!", "Control your data")
     # clear field
-elif key == "C"
-        calc_entry.delete(0, END)
-    # changing +-
 
-elif key == "-+":
+
 if "=" in calc_entry.get():
         calc_entry.delete(0, END)
         try:
