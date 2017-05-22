@@ -7,6 +7,7 @@ from tkinter import ttk
 root = Tk()
 root.title("Calculator")
 
+
 # calculator logic
 def calc(key):
     global memory
@@ -15,17 +16,17 @@ def calc(key):
         if calc_entry.get()[0] not in str1:
             calc_entry.insert(END, "The first symbol was not a number")
             messagebox.showerror("Error!", "You did not enter a number!")
-# score
+        # score
         try:
             result = eval(calc_entry.get())
             calc_entry.insert(END, "=" + str(result))
         except:
             calc_entry.insert(END, "Error!")
             messagebox.showerror("Error!", "Control your data")
-# clear field
+        # clear field
     elif key == "C":
         calc_entry.delete(0, END)
- #   changing +-
+        #   changing +-
     elif key == "-/+":
         if "=" in calc_entry.get():
             calc_entry.delete(0, END)
@@ -41,6 +42,7 @@ def calc(key):
             calc_entry.delete(0, END)
             calc_entry.insert(END, key)
 
+
 # create a key
 bttn_list = {
     "7", "8", "9", "+", "-",
@@ -51,10 +53,9 @@ bttn_list = {
 r = 1
 c = 0
 
-
 for i in bttn_list:
     rel = ""
-    cmd=lambda x=i: calc(x)
+    cmd = lambda x=i: calc(x)
     ttk.Button(root, text=i, command=cmd).grid(row=r, column=c)
     c += 1
     if c > 4:
@@ -63,6 +64,5 @@ for i in bttn_list:
 
 calc_entry = Entry(root, width=33)
 calc_entry.grid(row=0, column=0, columnspan=5)
-
 
 root.mainloop()
