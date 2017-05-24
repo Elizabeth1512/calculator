@@ -1,9 +1,11 @@
 import unittest
+from Calculator import *
+class TestZERO(unittest.TestCase):
+    def test_value(self):
+        init = start()
+        init("1/0")
+        result = init("=")
+        self.assertEqual("Error", result)
 
-from calculator import is_not_number
-
-class BtcPriceTestCase(unittest.TestCase):
-    def test_checking_of_input_in_form(self):
-        input = fgtrp
-        answer = is_not_number(input)  #Because you can put only numbers
-self.assertEqual(answer, False)
+if __name__ == '__main__':
+    unittest.main()
