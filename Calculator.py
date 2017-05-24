@@ -72,7 +72,7 @@ def start():
     calc_entry.grid(row=0, column=0, columnspan=5)
 
     #return calculation
-    return calc
+    #return calc
 
     #enable GUI
     root.mainloop()
